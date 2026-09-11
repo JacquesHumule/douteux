@@ -1,0 +1,32 @@
+name = "douteux"
+main = "server/build/index.js"
+compatibility_date = "2026-08-03"
+
+workers_dev = false
+preview_urls = false
+
+[placement]
+mode = "smart"
+
+[secrets]
+required = ["AUTH_TOKEN", "R2_BUCKET_NAME", "R2_ACCESS_KEY_ID", "R2_ACCOUNT_ID", "R2_SECRET_ACCESS_KEY"]
+
+[build]
+command = "worker-build --release ./server"
+
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+invocation_logs = true
+persist = true
+
+[observability.traces]
+enabled = false
+head_sampling_rate = 1
+persist = true
+
+[[kv_namespaces]]
+binding = "KV"
+
+[[r2_buckets]]
+binding = "R2"

@@ -1,0 +1,17 @@
+/target
+.dev.vars
+.claude/*.local.json
+
+wrangler.toml
+
+# Devenv
+.devenv*
+devenv.local.nix
+devenv.local.yaml
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
+.wrangler
